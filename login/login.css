@@ -1,0 +1,53 @@
+body {
+  overflow-x: hidden;
+  background: white;
+}
+.sign-in-form {
+  max-height: 500px !important;
+}
+.sign-up-div {
+  background: url("https://code.ptit.edu.vn/2020/images/bg_left.png"),
+    url("https://code.ptit.edu.vn/2020/images/bg_right.png");
+  background-position: left bottom, right bottom;
+  background-attachment: fixed, fixed;
+  background-repeat: no-repeat, no-repeat;
+  background-size:40%,40%;
+  padding-top:100px;
+  height:800px;
+}
+.sign-up-form {
+  background: white;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  height: fit-content;
+  width: 600px;
+}
+@media (min-width: 1200px) {
+  .sign-in-form {
+    padding-top: 70px !important;
+  }
+}
+@media (min-width: 1500px) {
+  .sign-in-form {
+    padding-top: 120px !important;
+  }
+}
+@media (min-width: 1800px) {
+  .sign-up-div{
+    height:1000px;
+  }
+  .sign-up-form {
+    transform: scale(1.2) translate(0, 10%);
+  }
+  .sign-in-form {
+    transform: scale(1.2);
+    padding-top: 150px !important;
+  }
+}
+textarea {
+  height: 150px !important;
+  resize: none;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}

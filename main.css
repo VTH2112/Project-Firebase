@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+/* ..............HEADER..................... */
+
+.header {
+  background: white;
+  padding: 40px 20px 5% 20px;
+}
+.in_left_head {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.left_line {
+  height: 100%;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left_line h1 {
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  font-size: 80%;
+}
+.left_line h1::before {
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 50px;
+  height: 2px;
+  margin-right: 20px;
+  background: black;
+}
+.overview_head {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  padding-top: 5%;
+}
+.overview_head h1 {
+  font-size: 400%;
+  line-height: 130%;
+  margin-bottom: 5%;
+  font-family: "Playfair Display", serif;
+}
+.overview_head p {
+  font-size: 100%;
+  max-width: 80%;
+  margin-bottom: 5%;
+}
+#head_btn {
+  outline: none;
+  border: none;
+  width: 150px;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: 2px solid black;
+  font-family: "Playfair Display", serif;
+}
+#head_btn:hover{
+  background: transparent;
+  color: black;
+}
+.right_head img {
+  width: 100%;
+}
+@media only screen and (max-width: 1361px) {
+  .overview_head p {
+    max-width: 90%;
+  }
+}
+@media only screen and (max-width: 1294px) {
+  .overview_head h1 {
+    font-size: 350%;
+  }
+  .overview_head p {
+    font-size: 90%;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  .overview_head h1 {
+    font-size: 300%;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .overview_head h1 {
+    font-size: 250%;
+  }
+  .overview_head p {
+    font-size: 80%;
+  }
+}
+@media only screen and (max-width: 844px) {
+  .right_head {
+    display: none;
+  }
+  .left_head {
+    width: 100%;
+  }
+  .overview_head h1 {
+    font-size: 300%;
+  }
+  .overview_head p {
+    font-size: 90%;
+    max-width: 90%;
+  }
+}
+
+/* ..............PRODUCT.................... */
+.search_job {
+  padding: 0;
+}
+.filter_menu {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 0 10% 8%;
+  width:max(70%,500px);
+}
+.filter_menu h1 {
+  margin-top: 10px;
+  margin-bottom:12px;
+  font-size:130%;
+  font-weight: 500;
+}
+.filter_menu li {
+  margin-bottom:5px;
+  color:#83838e;
+  display: flex;
+  align-items: center;
+}
+
+
+/* ...........PAGINATION............ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination div {
+  width: 200px;
+  height: 100%;
+  padding: 5px;
+  border-radius: 30px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+}
+.pagination div h1 {
+  width: 30px;
+  font-size: 120%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination div button {
+  width: 30px;
+  font-size: 120%;
+  -webkit-text-stroke: 1px white;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: none;
+  outline: none;
+}
+/* .............FOOTER................ */
+.footer {
+  margin-top: 20px;
+  padding-top: 50px;
+  background: white;
+  text-align: center;
+}
+.footer h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.footer p {
+  color: #83838e;
+  margin-bottom: 40px;
+}
+.subcribe_form {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+.subcribe_form input {
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  padding: 10px;
+}
+#email_sub {
+  width: 400px;
+}
+#sub_btn {
+  border-left: none;
+  width: 150px;
+}
+.social_list {
+  text-align: center;
+}
+.social_list li {
+  display: inline-block;
+  margin: 0 30px;
+  font-size: 250%;
+  padding-bottom: 50px;
+  cursor: pointer;
+}
+.social_list::after {
+  content: "";
+  display: block;
+  background: black;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.our_term {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  transform: translate() rotate();
+}
+.our_term li {
+  cursor: pointer;
+}
+
+/* ........Loading Animation.............  */
+body {
+  --nav-load-time: 300ms;
+  --nav-link-load-time: 500ms;
+  --article-load-delay: calc(var(--nav-load-time) + var(--nav-link-load-time));
+  overflow-x: hidden;
+}
+
+.in_left_head {
+  animation: article-load 300ms ease-in var(--article-load-delay);
+  animation-fill-mode: forwards;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.right_head {
+  animation: right-head-load 300ms ease-in var(--article-load-delay);
+  animation-fill-mode: forwards;
+  transform: translateX(30%);
+  opacity: 0;
+}
+.left_line {
+  animation: left-line-load 300ms ease-in var(--article-load-delay);
+  animation-fill-mode: forwards;
+  transform: translateY(-30%);
+  opacity: 0;
+}
+.search_job {
+  animation: right-article-load 300ms ease-in
+    calc(var(--article-load-delay) + 200ms);
+  animation-fill-mode: forwards;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+@keyframes article-load {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes right-article-load {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes left-line-load {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes right-head-load {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

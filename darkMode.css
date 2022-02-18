@@ -1,0 +1,77 @@
+.dm-body {
+  background: black;
+}
+.dm-body .job_detail{
+    background:#1c1c24 ;
+    color:white;
+}
+.dm-body h1::after{
+    background:white ;
+}
+/* dark mode header */
+.dm-header {
+  background: #1c1c24;
+  color: white;
+}
+.dm-header input {
+  border: 1px solid white !important;
+  background: #1c1c24 !important;
+}
+.dm-header h1::before {
+  background: white;
+}
+/* dark mode nav bar */
+.dm-nav-bar {
+  background: #1c1c24;
+}
+.dm-nav-bar a {
+  color: white;
+}
+.dm-nav-bar #menu {
+    background: #000000 !important;
+}
+.dm-nav-bar #menu i{
+    color:white !important;
+}
+.dm-nav-bar #menu-toggle {
+  background: #1c1c24 !important;
+  box-shadow: 0 1px 5px rgba(255, 255, 255, 0.25),
+    0 1px 5px rgba(255, 255, 255, 0.22) !important;
+}
+.dm-moon i:first-child{
+  color:#ffce45;
+}
+.dm-icon-selection{
+  color:black;
+}
+/* dark mode product */
+.dm-product {
+  color: white;
+}
+.dm-product .filter_menu {
+  background: #1c1c24;
+}
+/* dark mode paginate */
+.dm-pagination div,
+.dm-pagination div button {
+  color: white;
+  background: #1c1c24;
+}
+.dm-pagination i {
+  -webkit-text-stroke: 1px #1c1c24;
+}
+/* dark mode footer */
+.dm-footer,
+.dm-footer input {
+  background: #1c1c24;
+  color: white;
+}
+.dm-footer input {
+  border: 2px solid white;
+}
+.dm-footer ::placeholder {
+  color: #83838e;
+}
+.dm-footer .social_list::after {
+  background: white;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="../all.css">
+  <link rel="stylesheet" href="../jobDetail.css">
+  <link rel="stylesheet" href="user.css">
+  <link rel="stylesheet" href="../Vendor/Loading Website/style.css">
+  <title>User</title>
+</head>
+
+<body>
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+  <div class="wrap_body"></div>
+  <div class="job_detail">
+    <div class="job_detail_action">
+      <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M20.8 4.6a5.5 5.5 0 00-7.7 0l-1.1 1-1-1a5.5 5.5 0 00-7.8 7.8l1 1 7.8 7.8 7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z">
+        </path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2">
+        <circle cx="18" cy="5" r="3"></circle>
+        <circle cx="6" cy="12" r="3"></circle>
+        <circle cx="18" cy="19" r="3"></circle>
+        <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"></path>
+      </svg>
+    </div>
+    <img class="job_detail_image" width=60 height=60 style='border-radius: 5px;'>
+    <h1 class="job_detail_name"></h1>
+    <div class="job_detail_tag">
+      <div>
+        <span>Work level</span>
+        <span class='level_tag'>a</span>
+      </div>
+      <div>
+        <span>Employee type</span>
+        <span class='type_tag'>a</span>
+      </div>
+      <div>
+        <span>Offer salary</span>
+        <span class='salary_tag'>a</span>
+      </div>
+    </div>
+    <div style="height:55%;overflow: scroll;overflow-x: hidden;">
+      <h2>Overview</h2>
+      <p class="job_detail_overview"></p>
+      <h2>Job Description</h2>
+      <p class="job_detail_description"></p>
+    </div>
+  </div>
+  <!-- Upload Avatar Div -->
+  <div class="upload-photo-form" style='display: none;'>
+    <div class="d-flex align-items-center flex-column">
+      <p class='upload-title' style='font-size:120%;'></p>
+      <div class="input-group mb-5">
+        <input type="file" class="form-control" id="avatar-file" aria-describedby="inputGroupFileAddon04"
+          aria-label="Upload" accept="image/png, image/gif, image/jpeg">
+        <button class="btn bg-primary text-white" type="button" id="upload-avatar-button" disabled>Change</button>
+      </div>
+      <img class='avatar-preview'>
+    </div>
+  </div>
+  <!-- Navigation Bar -->
+  <div class="row nav_bar d-flex justify-content-between align-items-center">
+    <a href="/"><img
+        src="https://www.freelogoservices.com/api/main/images/1j+ojVVCOMkX9Wyrexe4hGf...16jU9UkYwkGfwWJpZyYVrFthmCMqg...Fp8...w7PFheuBBO1hkOdMQ6jiJ+U4Ydmks7oGHEZNQGGHN..."
+        width=80 height=50 /></a>
+    <a href="../login/login.html" id='sign_in'>Sign in</a>
+  </div>
+  <!-- User Page -->
+  <div class="container px-4 py-5">
+    <!-- User Page Heading -->
+    <div class="row justify-content-center" style='margin-bottom:20px;'>
+      <div class=' col-12 col-lg-11 col-xxl-9'>
+        <div class='d-flex flex-column align-items-center'
+          style="background:white;height:470px; padding:20px;border-radius: 6px;">
+          <div class="cover-photo-div d-flex justify-content-center" style='position: relative;'>
+            <div class="avatar-div d-flex flex-column justify-content-around text-center"
+              style='position:absolute;top:160px'>
+              <img class="rounded-circle avatar">
+              <i class="fas fa-camera add-photo-icon"></i>
+              <div class='avatar-overlay'></div>
+              <span class="fs-4 full-name" style='white-space: nowrap;font-weight: 700;'></span>
+              <div class='add-photo' style='display: none;'>
+                <div>
+                  <i class="far fa-camera" style='margin-right:10px;font-size:20px;'></i>
+                  Add Photo
+                </div>
+              </div>
+            </div>
+            <div class='add-cover-photo'>
+              <i class="fas fa-camera" style='margin-right:10px;font-size:18px;'></i>
+              Edit cover photo
+            </div>
+          </div>
+          <hr style="width:100%;margin-top:90px;" />
+          <div class='d-flex justify-content-end w-100'>
+            <div class="parent-btn-add-job">
+              <button type="submit" class="btn btn-primary float-end" data-bs-toggle="modal"
+                data-bs-target="#modal-add-job">Post a Job</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- User Page Content -->
+    <div class="row d-flex justify-content-center">
+      <!-- Left Sidebar -->
+      <div class="col-12 col-md-4 col-lg-4 col-xxl-3 mb-4">
+        <nav class="list-group list-group-flush user-sidebar">
+          <a class="list-group-item list-group-item-action sidebar-personal-info">Personal Info</a>
+          <a class="list-group-item list-group-item-action sidebar-posted-jobs">Posted Jobs</a>
+          <a class="list-group-item list-group-item-action sidebar-applied-jobs">Applied Jobs</a>
+        </nav>
+      </div>
+      <!-- Sidebar Item Content -->
+      <div class="col-12 col-md-8 col-lg-7 col-xxl-6">
+        <div class="content-personal-info">
+          <user-info></user-info>
+        </div>
+        <div class="content-posted-jobs"></div>
+        <div class="content-applied-jobs"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Posting Job Button -->
+  <div class="modal" id="modal-add-job">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mx-auto">Job Detail</h5>
+          <button type="button" class="btn-close ms-0" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-4">
+              <label for="posted-job-name" class="form-label fs-5">Title</label>
+              <input type="text" class="form-control" id="posted-job-name">
+            </div>
+            <div class="mb-4">
+              <label for="modal-posted-job-detail" class="form-label fs-5">Overview</label>
+              <input class="form-control" id="modal-posted-job-overview"/>
+            </div>
+            <div class="mb-4">
+              <label for="posted-job-description" class="form-label fs-5">Description</label>
+              <textarea type="text" class="form-control" id="posted-job-description"></textarea>
+            </div>
+            <div class="mb-4">
+              <label for="employment-type2" class="form-label fs-5">Type of Employment</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="employment-type" id="employment-type1"
+                  value="Full Time">
+                <label class="form-check-label" for="employment-type1">Full-time</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="employment-type" id="employment-type2"
+                  value="Part Time">
+                <label class="form-check-label" for="employment-type2">Part-time</label>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="seniorty-level4" class="mb-2 fs-5">Seniorty Level</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="seniorty-level" id="seniorty-level1" value="Intern">
+                <label class="form-check-label" for="seniorty-level1">Intern</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="seniorty-level" id="seniorty-level2" value="Fresher">
+                <label class="form-check-label" for="seniorty-level2">Fresher</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="seniorty-level" id="seniorty-level3" value="Junior">
+                <label class="form-check-label" for="seniorty-level3">Junior</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="seniorty-level" id="seniorty-level4" value="Senior">
+                <label class="form-check-label" for="seniorty-level4">Senior</label>
+              </div>
+            </div>
+            <div>
+              <label for="posted-job-salary" class="form-label fs-5">Salary Range</label>
+              <input type="text" class="form-control" id="posted-job-salary">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="mx-auto">
+            <button type="submit" class="btn btn-primary" id="modal-posted-job-submit">Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- View Job Candidates -->
+  <div class="modal" id="modal-view-job-candidates">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Job Candidates</h5>
+          <button type="button" class="btn-close ms-0" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body candidate-body">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-storage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../Firebase/firebase.js"></script>
+  <script src="../userActive.js"></script>
+  <script src="UserInfo.js" type="module"></script>
+  <script src="UserPostedJob.js" type="module"></script>
+  <script src="UserAppliedJob.js" type="module"></script>
+  <script src="user.js"></script>
+  <script src="../Vendor/Loading Website/onLoad.js"></script>
+</body>
+
+</html>
