@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../all.css">
+    <link rel="stylesheet" href="../jobDetail.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../Vendor/Loading Website/style.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal@4/minimal.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <div class="wrap_body"></div>
+    <div class="job_detail">
+        <div class="job_detail_action">
+            <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M20.8 4.6a5.5 5.5 0 00-7.7 0l-1.1 1-1-1a5.5 5.5 0 00-7.8 7.8l1 1 7.8 7.8 7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z">
+                </path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"></path>
+            </svg>
+        </div>
+        <img class="job_detail_image" width=60 height=60 style='border-radius: 5px;'>
+        <h1 class="job_detail_name"></h1>
+        <div class="job_detail_tag">
+            <div>
+                <span>Work level</span>
+                <span class='level_tag'>a</span>
+            </div>
+            <div>
+                <span>Employee type</span>
+                <span class='type_tag'>a</span>
+            </div>
+            <div>
+                <span>Offer salary</span>
+                <span class='salary_tag'>a</span>
+            </div>
+        </div>
+        <div style="height:55%;overflow: scroll;overflow-x: hidden;">
+            <h2>Overview</h2>
+            <p class="job_detail_overview"></p>
+            <h2>Job Description</h2>
+            <p class="job_detail_description"></p>
+        </div>
+    </div>
+    <!--________________________________ nav-lg-xl  _________________________________-->
+    <div class=" d-sm-none  d-none  d-xl-block d-lg-none nav-sidebar ">
+        <div class="sidebar-fixed">
+            <div class="header-sidebar d-flex justify-content-between pt-2 pl-2">
+                <a href="/"><img
+                    src="https://www.freelogoservices.com/api/main/images/1j+ojVVCOMkX9Wyrexe4hGf...16jU9UkYwkGfwWJpZyYVrFthmCMqg...Fp8...w7PFheuBBO1hkOdMQ6jiJ+U4Ydmks7oGHEZNQGGHN..."
+                    width=80 height=50 /></a>
+            </div>
+            <div class="scroll-sidebar pt-3">
+                <div class="scroll-sidebar-content">
+                    <ul class="nav flex-column   nav_sidebar ">
+                        <li class="nav-item   pb-3">
+                            <a href="/" class="nav-link nav-bar-item">
+                                <i class="fas fa-arrow-right pr-2"></i>
+                                <span>Visit Site</span> </a>
+                        </li>
+                        <li class="nav-item   pb-3 nav-active  user-click">
+                            <a href="#" class="nav-link nav-bar-item">
+                                <i class="fas fa-user-friends pr-2"></i>
+                                <span>User</span> </a>
+                        </li>
+                        <li class="nav-item pb-3">
+                            <a href="#" class="nav-link active-page-show">
+                                <i class="fas fa-check-circle pr-2" style='font-size:18px;'></i>
+                                <span>Active</span></a>
+                        </li>
+                        <li class="nav-item pb-3">
+                            <a href="#" class="nav-link pending-page-show ">
+                                <i class="fas fa-exclamation-circle pr-2 " style='font-size:18px;'></i>
+                                <span>Pending</span></a>
+                        </li>
+                        <li class="nav-item pb-3">
+                            <a href="#" class="nav-link reject-page-show">
+                                <i class="fas fa-times-circle pr-2 " style='font-size:18px;'></i>
+                                <span>Reject</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-top admin-container-sidebar  d-sm-none  d-none  d-xl-block">
+        <div class="nav-top-content ">
+            <div class=" input_head_right d-flex">
+                <form>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text "><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" id='myInput' class="form-control search_input" placeholder="Search">
+                    </div>
+                </form>
+            </div>
+            <div class="nav-item-top">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="far fa-bell"></i><span
+                                class="bg-primary dots"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="far fa-envelope "></i><span
+                                class="bg-primary dots"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><img
+                                src="https://anhdepblog.com/wp-content/uploads/2020/09/hinh-girl-xinh-de-thuong-10.jpg"
+                                class="rounded-circle" width="50" height="50"> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--__________________________ small nav nav-md ___________________________ -->
+    <div class=" d-sm-block  d-block   d-lg-block d-xl-none">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark  nav-sm-flex ">
+            <!-- Brand/logo -->
+            <div class="menu-btn-sidebar ">
+                <i class="fas fa-bars"></i>
+                <a href="/"><img
+                    src="https://www.freelogoservices.com/api/main/images/1j+ojVVCOMkX9Wyrexe4hGf...16jU9UkYwkGfwWJpZyYVrFthmCMqg...Fp8...w7PFheuBBO1hkOdMQ6jiJ+U4Ydmks7oGHEZNQGGHN..."
+                    width=80 height=50 /></a>
+            </div>
+            <!-- Links -->
+            <div class="nav-top-content nav-sm  ">
+                <div class=" input_head_right ">
+                    <form>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text "><i class="fas fa-search"></i></span>
+                            </div>
+                            <input type="text"  class="form-control search_input" placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+                <div class="nav-item-top">
+                    <ul class="navbar-nav ml-auto navbar-list">
+                        <li class="nav-item nav-icon">
+                            <a href="#" class="nav-link"><i class="far fa-bell"></i><span
+                                    class="bg-primary dots"></span></a>
+                        </li>
+                        <li class="nav-item nav-icon">
+                            <a href="#" class="nav-link"><i class="far fa-envelope "></i><span
+                                    class="bg-primary dots"></span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link"><img
+                                    src="https://anhdepblog.com/wp-content/uploads/2020/09/hinh-girl-xinh-de-thuong-10.jpg"
+                                    class="rounded-circle" width="50" height="50"> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- ________________________CONTENT_________________________________ -->
+    <div class="admin-page">
+        <div class="container-fluid">
+            <!--___________________ __________________________________________User_page_____________________________________________ -->
+            <div class="row user-page">
+                <!-- Modal -->
+                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="edit">Enter input to edit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="input-group mb-3 input-group-sm ">
+                                        <input type="text" class=" form-control inputId" placeholder="ID" disabled>
+                                    </div>
+                                    <div class="input-group mb-3 input-group-sm ">
+                                        <input type="email" class=" form-control inputEmail " placeholder="EMAIL">
+                                    </div>
+                                    <div class="input-group pt-4 mb-3 input-group-sm">
+                                        <input type="password" class="form-control inputPassword" placeholder="PASSWORD"
+                                            data-toggle="tooltip" data-placement="top" title="Change Password">
+                                    </div>
+                                    <div class="input-group pt-4 mb-3 input-group-sm">
+                                        <input type="password" class="form-control confirmPassword"
+                                            placeholder="CONFIRM PASSWORD" data-toggle="tooltip" data-placement="top"
+                                            title="RePassword">
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary confirmEdit" data-dismiss="modal"
+                                    type='submit'>Confirm</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- _______________________________________________________________________________________ -->
+                <div class="col-xl-12 fillter pb-3">
+                    <h4>User List</h4> 
+                    <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+                </div>
+                <br>
+                <table class="table table-striped" style="table-layout: fixed;" >
+                    <thead>
+                        <th style="width:200px;padding-left:20px !important">Id</th>
+                        <th style="width:180px;">Name</th>
+                        <th style="width:130px;">Contact</th>
+                        <th style="width:200px;">Email</th>
+                        <th style="width:200px;">Password</th>
+                        <th style="width:140px;">Action</th>
+                    </thead>
+                    <tbody class="tbody" id="myTable">
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- __________________________________________CATEGORY_ACTIVE ______________________________________________________________ -->
+            <div class="row active-page" style="display:none">
+
+            </div>
+            <!-- _____________________________________________________________________________________________________ -->
+            <!-- __________________________________________CATEGORY_ACTIVE ______________________________________________________________ -->
+            <div class="row pending-page" style="display:none">
+
+            </div>
+
+
+
+
+            <!-- _____________________________________________________________________________________________________ -->
+            <!-- __________________________________________CATEGORY_ACTIVE ______________________________________________________________ -->
+            <div class="row reject-page" style="display:none">
+
+            </div>
+
+
+
+
+            <!-- _____________________________________________________________________________________________________ -->
+        </div>
+
+        <!-- _______________________________________________________ -->
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../Firebase/firebase.js"></script>
+        <script src="admin.js"></script>
+        <script src="../Vendor/Loading Website/onLoad.js"></script>
+        <script src="adminCpActive.js"></script>
+        <script src="adminCpPending.js"></script>
+        <script src="adminCpReject.js"></script>
+        <script src="../userActive.js"></script>
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
